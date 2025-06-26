@@ -30,8 +30,8 @@ CREATE TABLE Customers (
 -- Table structure for table `Orders` 
 
 CREATE TABLE Orders (
-    order_id VARCHAR(20) PRIMARY KEY,
-    customer_id VARCHAR(20) REFERENCES Customers(customer_id),
+    order_id INT PRIMARY KEY,
+    customer_id INT FOREIGN KEY (customer_id) REFERENCES Customers(customer_id),
     order_date DATE
 );
 
