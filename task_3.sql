@@ -12,5 +12,6 @@ alx_book_store = mysql.connector.connect(
 cursor = alx_book_store.cursor()
   
 cursor.execute("""
+  USE alx_book_store,
   SHOW TABLES
 """)
