@@ -13,8 +13,15 @@ cursor = alx_book_store.cursor()
   
 cursor.execute("""
   USE alx_book_store;
-  SELECT * FROM 
-    information_schema.columns
+  SELECT 
+    COLUMN_NAME,
+    COLUMN_TYPE,
+    IS_NULLABLE,
+    COLUMN_KEY,
+    COLUMN_DEFAULT,
+    EXTRA
+  FROM 
+    INFORMATION_SCHEMA.COLUMNS
 WHERE 
-    table_schema = DATABASE() AND table_name = 'Books'
+    TABLE_SCHEMA = alx_book_store AND TABLE_NAME = 'Books'
 """)
